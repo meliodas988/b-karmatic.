@@ -6,9 +6,10 @@ authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-discord = "^1.0.1"
 Pillow = "^8.2.0"
 "discord.py" = "^1.7.2"
+flask = "^2.0.1"
+praw = "^7.2.0"
 
 [tool.poetry.dev-dependencies]
 

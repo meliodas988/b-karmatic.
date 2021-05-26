@@ -1,0 +1,19 @@
+import discord
+from discord.ext import commands
+
+class Repeat(commands.Cog):
+    
+    def __init__(self, client):
+
+        self.client=client
+
+    @commands.command(aliases=['mimic', 'repeat', 'copy'])
+    async def say(self, ctx, *, message):
+        await ctx.send(message)
+    
+    @commands.command(aliases=["quote", 'array'])
+    async def script(self, ctx, *args):
+        await ctx.send(args)
+
+def setup(client):
+    client.add_cog(Repeat(client))

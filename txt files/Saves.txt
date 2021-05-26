@@ -1,0 +1,65 @@
+
+
+
+#def loadcmds():
+#    for command in client.commands:
+#        print(f"Loaded: {command}")
+
+
+
+
+
+
+#    if not message.author.bot:
+#        channel=client.get_channel(840001405267607582)
+#        if not isinstance(message.channel, discord.channel.DMChannel):
+#            img=Image.open("images/onmsg.png")
+#            draw=ImageDraw.Draw(img)
+#            font=ImageFont.truetype("fonts/font.otf", 40)
+#            draw.text((196,196), message.content, (255,255,255), font=font)
+#            img.save("onmsgsave1.png")
+#            embed=discord.Embed(title='Message sent', description=f'Sent from {message.guild.name} in {message.channel.mention}', colour=discord.Colour.red())
+#            embed.add_field(name='Message sent:', value=f"{message.content}.")
+#            file = discord.File("onmsgsave1.png")
+#            embed.set_image(url="attachment://onmsgsave1.png")
+#            date_time=now = datetime.now()
+#            dt_string = now.strftime("%d/%m/%Y %H:%M")
+#            embed.set_footer(text=f'At {dt_string} by {message.author.name}')
+#            await channel.send(embed=embed)
+
+
+
+
+
+
+
+
+
+
+#@client.command()
+#async def sm(ctx, *, message):
+ #   channel=client.get_channel(845427554852405309)
+ #   embed=discord.Embed(title='Message to Wolfie', description=f'{ message.content }',colour=discord.Colour.red())
+  #  embed.add_footer(text='Sent by Samyul.')
+ #   await channel.send(embed=embed)
+#    await channel.send(message.content)
+
+
+
+#@client.command()
+#async def wm(ctx, *, message):
+ #   channel=client.get_channel(845427696472555533)
+  #  embed=discord.Embed(title='Message #to Samyul', description=f'{message.content}',colour=discord.Colour.red())
+  #  embed.add_footer(text='Sent by Wolfie.')
+ #   await channel.send(embed=embed)
+
+#member.display_name.
+
+
+
+#@client.command()
+#async def mtm(ctx, *, message):
+ #   channel=client.get_channel(845427696472555533)
+ #   embed=discord.Embed(title='Message #to Samyul', description=f'{message.content}',colour#=discord.Colour.red())
+#    embed.add_footer(text='Sent by Meli.')
+  #  await channel.send(embed=embed)
