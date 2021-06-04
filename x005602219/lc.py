@@ -18,24 +18,20 @@ import math
 import traceback
 import praw
 from webserver import keep_alive
-from SimpleEconomy import Seco
+import pickle
 
-class Ping(commands.Cog):
+
+
+
+class Lc(commands.Cog):
     
     def __init__(self, client):
 
         self.client=client
-
-    @commands.command()
-    async def cmd(self, ctx):
-
-
-
-
 
 
 
 
 
 def setup(client):
-    client.add_cog(command(client))
+    client.add_cog(Lc(client))

@@ -1,0 +1,50 @@
+
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+
+        print(error)
+        if isinstance(error, commands.MissingPermissions):
+            em=discord.Embed(title='Error!', description=f"{error}.", colour=discord.Colour.red())
+#            em.add_field(name=f'Failed exception:', value=ctx)
+            await ctx.send(embed=em)
+
+        elif isinstance(error, commands.UserInputError):
+            em=discord.Embed(title='Error!', description=f"{error}.", colour=discord.Colour.red())
+#            em.add_field(name=f'Failed exception:', value=ctx)
+            await ctx.send(embed=em)
+
+
+        elif isinstance(error, commands.CommandNotFound):
+            em=discord.Embed(title='Error!', description=f"{error}.", colour=discord.Colour.red())
+  #          em.add_field(name=f'Failed exception:', value=ctx)
+            await ctx.send(embed=em)
+
+
+
+        elif isinstance(error, commands.BotMissingPermissions):
+            em=discord.Embed(title='Error!', description=f"{error}.", colour=discord.Colour.red())
+ #           em.add_field(name=f'Failed exception:', value=ctx)
+            await ctx.send(embed=em)
+
+
+        elif isinstance(error, commands.MissingRequiredArgument):
+            em=discord.Embed(title='Error!', description=f"{error}.", colour=discord.Colour.red())
+#            em.add_field(name=f'Failed exception:', value=ctx)
+            await ctx.send(embed=em)
+
+
+        elif isinstance(error, commands.BadArgument):
+            await ctx.send("[HANDLER] Could not find that value!")
+
+
+        elif isinstance(error, commands.DisabledCommand):
+            em=discord.Embed(title='Error!', description=f"{error}.", colour=discord.Colour.red())
+#            em.add_field(name=f'Failed exception:', value=ctx)
+            await ctx.send(embed=em)
+
+
+        elif isinstance(error, commands.NoPrivateMessage):
+            em=discord.Embed(title='Error!', description=f"{error}.", colour=discord.Colour.red())
+            em.set_footer(text='k.command (command) | for help!')
+#            em.add_field(name=f'Failed exception:', value=ctx)
+            await ctx.send(embed=em)

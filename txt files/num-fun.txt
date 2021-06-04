@@ -36,3 +36,8 @@ class Chdl(commands.Cog):
 
 def setup(client):
     client.add_cog(Chdl(client))
+
+
+
+
+ 

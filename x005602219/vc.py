@@ -8,7 +8,7 @@ import time
 import requests
 import os
 from os import sys
-from PIL import Image,ImageFont,ImageDraw
+from PIL import Image, ImageFont, ImageDraw
 from io import BytesIO
 from datetime import datetime
 from itertools import cycle
@@ -18,17 +18,16 @@ import math
 import traceback
 import praw
 from webserver import keep_alive
-from SimpleEconomy import Seco
+from discord.utils import get
+import youtube_dl
 
-class Ping(commands.Cog):
+
+
+class Vc(commands.Cog):
     
     def __init__(self, client):
 
         self.client=client
-
-    @commands.command()
-    async def cmd(self, ctx):
-
 
 
 
@@ -38,4 +37,4 @@ class Ping(commands.Cog):
 
 
 def setup(client):
-    client.add_cog(command(client))
+    client.add_cog(Vc(client))

@@ -18,7 +18,7 @@ import math
 import traceback
 import praw
 from webserver import keep_alive
-import pickle
+
 
 cogs = ['b', 'f', 'm', 'a']
 
@@ -41,6 +41,11 @@ class Ping(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
+    async def cmds(self, ctx):
+        await ctx.send(self.get_commands())
+
+
+    @commands.command()
     @commands.check(owner)
     async def reload(self, ctx, cog: str = 'all'):
         await asyncio.sleep(1)
@@ -59,10 +64,12 @@ class Ping(commands.Cog):
                 self.client.reload_extension('x005602219.f')
                 self.client.reload_extension('x005602219.m')
                 self.client.reload_extension('x005602219.a')
+                self.client.reload_extension('x005602219.text')
+                self.client.reload_extension('x005602219.et6')
                 await asyncio.sleep(2)
                 await ctx.channel.purge(limit=1)
             except Exception as e:
-                await ctx.send(f"Couldn't load cogs because:\n`{e}`", delete_after=10)
+                await ctx.send(f"Couldn't load cogs because:\n{e}", delete_after=10)
         else:
             try:
                 await asyncio.sleep(1)
@@ -116,6 +123,18 @@ class Ping(commands.Cog):
         )
 
 
+    @commands.command()
+    async def shutdown(self, ctx):
+        if ctx.message.author.id == 412971313188306945: 
+            print("shutdown")
+            try:
+                await self.client.close()
+            except:
+                print("EnvironmentError")
+                self.client.clear()
+        else:
+            await ctx.send("You do not own this bot!")
+
 #self.client.unload('commands.fun')
 #self.client.unload('commands.bot')
 #self.client.unload('commands.mod')
@@ -124,11 +143,27 @@ class Ping(commands.Cog):
     @commands.command()
     @commands.check(owner)
     async def fr(self, ctx):
-        self.client.reload_extension('x005602219.b')
-        self.client.reload_extension('x005602219.f')
-        self.client.reload_extension('x005602219.m')
-        self.client.reload_extension('x005602219.a')
-        await ctx.send("Cogs reloaded.", delete_after=1)
+        try:
+            await ctx.channel.purge(limit=1)
+            self.client.reload_extension('x005602219.b')
+            self.client.reload_extension('x005602219.f')
+            self.client.reload_extension('x005602219.m')
+            self.client.reload_extension('x005602219.a')
+            self.client.reload_extension('x005602219.et6')
+            self.client.reload_extension('x005602219.text')
+            self.client.reload_extension('x005602219.lc')
+            self.client.reload_extension('x005602219.vc')
+            self.client.reload_extension('x005602219.msc')
+        except Exception as l:
+            await ctx.send(l)
+#            raise Exception
+#            await ctx.send(Exception)
+#        except Exception as e:
+#            
+#            await ctx.send(e, delete_after=5)
+#            if e == None:
+#                await ctx.send("Cogs reloaded.", delete_after=2)
+        
 
 
 
